@@ -25,14 +25,15 @@ class Sorter:
                 if self.sampleList[y] > self.sampleList[y + 1]:
                     self.sampleList[y], self.sampleList[y + 1] = self.sampleList[y + 1], self.sampleList[y]
                     swap_count += 1
-                    print(f"Swapping Operations count: {swap_count}")
+                    #TODO: UNCOMMENT AFTER STEM_LEAF FINISHED print(f"Swapping Operations count: {swap_count}")
 
         # Silly Print
-        print("As you can see even though bubble sort is the quickest to code...")
-        for x in range(3):
-            time.sleep(1)
-            print("." * x)
-            if x == 2:
-                print("It is probably the most inefficient")
+        # TODO: UNCOMMENT AFTER STEM_LEAF FINISHED
+        # print("As you can see even though bubble sort is the quickest to code...")
+        # for x in range(3):
+        #     time.sleep(1)
+        #     print("." * x)
+        #     if x == 2:
+        #         print("It is probably the most inefficient")
 
         return self.sampleList
