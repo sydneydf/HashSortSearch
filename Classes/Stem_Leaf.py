@@ -1,20 +1,16 @@
 from Classes.Sorter import Sorter
 
 
-# TODO: This class needs major refinement once search is done.
-# TODO: We use search to test if Stem_leaf is working
 class Stem_Leaf:
     def __init__(self):
         self.sortedList = []
         self.stemLeafDict = {}
         self.initClsSetup()
 
-    # TODO: Will this work?
     def initClsSetup(self):
         self.sortedList = Sorter().bubble_sort()
-        # initialize and pregen 15 stem keys because our max nums from file is 150
 
-        # TODO: Does return_Stem_Leaf() create keys ??
+        # initialize and pregen 15 stem keys because our max nums from file is 150
         for stem in range(15):
             self.stemLeafDict[stem] = []
 
@@ -37,9 +33,26 @@ class Stem_Leaf:
             # append Leaf to Stem Key
             self.stemLeafDict[potentialStem].append(potentialLeaf)
 
+    # ON UNITTESTS THIS PRINTS NORMALLY
     def tempPrintTest(self):
+        # Was tempted to use Stempgraphic package with numpy here but I thought that might be cheating
+
+        # proper print aligning with string justify methods
+        print("STEM", "|Leaf".rjust(5, " "))
+
+        # variable unpack dictionary
+        # also using end= paramater to print on same line
         for stem, leafList in self.stemLeafDict.items():
-            print(f"Stem: {stem}")
+            print(stem, end=" ")
+
+            # Spacefix created to properly align 2 digit stems for print
+            spaceFix = 4
+            if len(str(stem)) > 1:
+                spaceFix -= 1
+            # Implementing spacefix with justify prints
+            print("|".rjust(spaceFix, " "), end=" ")
             for leaf in leafList:
-                print(f"Leaf for stem {stem}: {leaf}")
+                print(leaf, end=" ")
+            # New line for next stemleaf
+            print("\n")
         return True

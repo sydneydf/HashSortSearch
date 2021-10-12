@@ -6,6 +6,8 @@ from sampleInput import sampleInput as _sampleList
 class Sorter:
     # WE are going to cheat and use a simpler sorting algorithm to implement, Bubble sort.
     # quicksort will take longer to implement.
+
+    # Bubble sort incredibly inefficient but simple to implement
     def __init__(self):
         # Class initialized by importing unsorted list from /sampleInput.py
         self.sampleList = _sampleList
@@ -25,15 +27,5 @@ class Sorter:
                 if self.sampleList[y] > self.sampleList[y + 1]:
                     self.sampleList[y], self.sampleList[y + 1] = self.sampleList[y + 1], self.sampleList[y]
                     swap_count += 1
-                    #TODO: UNCOMMENT AFTER STEM_LEAF FINISHED print(f"Swapping Operations count: {swap_count}")
-
-        # Silly Print
-        # TODO: UNCOMMENT AFTER STEM_LEAF FINISHED
-        # print("As you can see even though bubble sort is the quickest to code...")
-        # for x in range(3):
-        #     time.sleep(1)
-        #     print("." * x)
-        #     if x == 2:
-        #         print("It is probably the most inefficient")
 
         return self.sampleList

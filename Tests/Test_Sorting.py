@@ -11,7 +11,7 @@ class Test_InitialSort(unittest.TestCase):
 
     # Compare to built in python function that returns sorted list from parsed in parameter
     def test_sorter(self):
-        self.assertListEqual(self.TestObj.bubble_sort(), sorted(sampleInput))
+        self.assertEqual(self.TestObj.bubble_sort(), sorted(sampleInput))
 
 
 if __name__ == '__main__':
